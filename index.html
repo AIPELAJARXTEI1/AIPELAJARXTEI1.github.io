@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Majapahit: Kejayaan dan Keruntuhan Imperium Nusantara</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--terracotta:#8B0000;--gold:#D4AF37;--black:#1A1A1A;--cream:#FDFBF7}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',sans-serif;background:var(--cream);color:#2c2c2c;line-height:1.7}
+    h1,h2,h3{font-family:'Cinzel',serif}
+    .navbar{position:fixed;top:0;width:100%;background:rgba(26,26,26,.95);padding:1rem;z-index:100;display:flex;justify-content:space-between;align-items:center}
+    .logo{color:var(--gold);font-family:'Cinzel',serif;font-weight:700;font-size:1.3rem}
+    .nav a{color:#fdfbf7;margin-left:1.2rem;text-decoration:none;font-size:.9rem}
+    .hero{min-height:100vh;background:linear-gradient(rgba(26,26,26,.7),rgba(139,0,0,.6)),url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Bajang_Ratu_Gate_Trowulan.jpg/1280px-Bajang_Ratu_Gate_Trowulan.jpg') center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding:6rem 1.5rem 3rem}
+    .hero h1{font-size:clamp(1.8rem,5vw,3rem);margin-bottom:1rem}
+    .hero h1 span{color:var(--gold)}
+    .hero p{max-width:600px;margin:0 auto 2rem;opacity:.95}
+    .btn{display:inline-block;background:var(--gold);color:var(--black);padding:.8rem 1.8rem;border-radius:4px;text-decoration:none;font-weight:600}
+    section{padding:4rem 1.5rem}
+    .container{max-width:1000px;margin:0 auto}
+    .section-title{text-align:center;margin-bottom:2.5rem}
+    .section-title h2{font-size:1.8rem;margin-bottom:.5rem}
+    .divider{width:50px;height:3px;background:linear-gradient(90deg,var(--terracotta),var(--gold));margin:0 auto}
+    .timeline{position:relative;max-width:700px;margin:0 auto}
+    .timeline::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:3px;background:var(--terracotta)}
+    .t-item{position:relative;padding-left:50px;margin-bottom:2rem}
+    .t-item::before{content:'';position:absolute;left:12px;top:6px;width:16px;height:16px;background:var(--gold);border:3px solid var(--terracotta);border-radius:50%}
+    .t-card{background:white;padding:1.3rem;border-radius:8px;box-shadow:0 4px 15px rgba(0,0,0,.08);border-left:4px solid var(--terracotta)}
+    .t-year{color:var(--terracotta);font-weight:700;margin-bottom:.3rem}
+    .kings{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+    .king{background:white;border-radius:10px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.08)}
+    .king-img{height:160px;background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:2.5rem}
+    .king-body{padding:1.2rem}
+    .king-body h3{font-size:1.1rem;margin-bottom:.3rem}
+    .reign{color:var(--terracotta);font-size:.85rem;font-weight:600;margin-bottom:.5rem}
+    .relics{background:var(--black);color:#fdfbf7}
+    .relics h2,.relics p{color:#fdfbf7}
+    .relic-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+    .relic{background:#252525;border-radius:10px;padding:1.3rem;border:1px solid rgba(212,175,55,.2)}
+    .relic h3{color:var(--gold);margin-bottom:.5rem}
+    footer{background:var(--black);color:#aaa;text-align:center;padding:2rem;font-size:.9rem}
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Maja<span style="color:#fdfbf7">pahit</span></div>
+    <div class="nav">
+      <a href="#timeline">Sejarah</a>
+      <a href="#kings">Raja</a>
+      <a href="#relics">Peninggalan</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <div style="display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:.3rem 1rem;border-radius:50px;font-size:.8rem;margin-bottom:1.2rem;letter-spacing:1px">1293 – 1527 M</div>
+      <h1>Majapahit: Kejayaan dan Keruntuhan <span>Imperium Nusantara</span></h1>
+      <p>Menelusuri jejak sejarah berdirinya Kerajaan Majapahit, masa keemasan Hayam Wuruk & Gajah Mada, hingga masa kemundurannya.</p>
+      <a href="#timeline" class="btn">Jelajahi Sejarah →</a>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <div class="container">
+      <div class="section-title">
+        <h2>Dari Berdiri hingga Runtuh</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="timeline">
+        <div class="t-item">
+          <div class="t-card">
+            <div class="t-year">1293 M</div>
+            <h3>Masa Berdiri</h3>
+            <p>Raden Wijaya mendirikan Majapahit setelah mengalahkan Jayakatwang dan mengusir pasukan Mongol. Ibu kota dibangun di Hutan Tarik (Trowulan).</p>
+          </div>
+        </div>
+        <div class="t-item">
+          <div class="t-card">
+            <div class="t-year">1328–1350 M</div>
+            <h3>Tribhuwana & Sumpah Palapa</h3>
+            <p>Ratu Tribhuwana Tunggadewi memerintah. Gajah Mada diangkat Mahapatih dan mengikrarkan Sumpah Palapa untuk menyatukan Nusantara.</p>
+          </div>
+        </div>
+        <div class="t-item">
+          <div class="t-card">
+            <div class="t-year">1350–1389 M</div>
+            <h3>Masa Keemasan</h3>
+            <p>Puncak kejayaan di bawah Hayam Wuruk dan Gajah Mada. Pengaruh Majapahit mencakup hampir seluruh Nusantara (Nagarakretagama 1365).</p>
+          </div>
+        </div>
+        <div class="t-item">
+          <div class="t-card">
+            <div class="t-year">1404–1527 M</div>
+            <h3>Kemunduran & Runtuh</h3>
+            <p>Perang Paregreg melemahkan kerajaan. Pengaruh Islam bangkit. Majapahit berakhir sekitar 1527 setelah serangan Kesultanan Demak.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kings">
+    <div class="container">
+      <div class="section-title">
+        <h2>Raja-Raja Majapahit</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="kings">
+        <div class="king">
+          <div class="king-img">♛</div>
+          <div class="king-body">
+            <h3>Raden Wijaya</h3>
+            <div class="reign">1293–1309 M</div>
+            <p>Pendiri Majapahit. Berhasil mengalahkan Jayakatwang dan mengusir Mongol.</p>
+          </div>
+        </div>
+        <div class="king">
+          <div class="king-img">♛</div>
+          <div class="king-body">
+            <h3>Tribhuwana Tunggadewi</h3>
+            <div class="reign">1328–1350 M</div>
+            <p>Ratu yang mengangkat Gajah Mada. Sumpah Palapa diikrarkan pada masanya.</p>
+          </div>
+        </div>
+        <div class="king">
+          <div class="king-img">♛</div>
+          <div class="king-body">
+            <h3>Hayam Wuruk</h3>
+            <div class="reign">1350–1389 M</div>
+            <p>Raja terbesar. Bersama Gajah Mada membawa Majapahit ke puncak kejayaan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="relics" id="relics">
+    <div class="container">
+      <div class="section-title">
+        <h2>Peninggalan Sejarah</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="relic-grid">
+        <div class="relic">
+          <h3>Gapura Bajang Ratu</h3>
+          <p>Gapura paduraksa terbesar di Trowulan. Terkait penghormatan Raja Jayanegara (1328).</p>
+        </div>
+        <div class="relic">
+          <h3>Candi Tikus</h3>
+          <p>Situs petirtaan (pemandian) kerajaan di Bejijong, Trowulan.</p>
+        </div>
+        <div class="relic">
+          <h3>Gapura Wringin Lawang</h3>
+          <p>Candi bentar yang diduga pintu gerbang kompleks ibu kota Majapahit.</p>
+        </div>
+        <div class="relic">
+          <h3>Prasasti Kudadu</h3>
+          <p>Prasasti 1294 M yang menceritakan perlindungan Raden Wijaya oleh penduduk Kudadu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Portofolio Sejarah Majapahit</p>
+    <p style="margin-top:.4rem;font-size:.8rem">Dibuat untuk melestarikan warisan Nusantara</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Majapahit: Kejayaan dan Keruntuhan Imperium Nusantara</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--terracotta:#8B0000;--gold:#D4AF37;--black:#1A1A1A;--cream:#FDFBF7}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',sans-serif;background:var(--cream);color:#2c2c2c;line-height:1.7}
+    h1,h2,h3{font-family:'Cinzel',serif}
+    .navbar{position:fixed;top:0;width:100%;background:rgba(26,26,26,.95);padding:1rem;z-index:100;display:flex;justify-content:space-between;align-items:center}
+    .logo{color:var(--gold);font-family:'Cinzel',serif;font-weight:700;font-size:1.3rem}
+    .nav a{color:#fdfbf7;margin-left:1.2rem;text-decoration:none;font-size:.9rem}
+    .hero{min-height:100vh;background:linear-gradient(rgba(26,26,26,.7),rgba(139,0,0,.6)),url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Bajang_Ratu_Gate_Trowulan.jpg/1280px-Bajang_Ratu_Gate_Trowulan.jpg') center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding:6rem 1.5rem 3rem}
+    .hero h1{font-size:clamp(1.8rem,5vw,3rem);margin-bottom:1rem}
+    .hero h1 span{color:var(--gold)}
+    .hero p{max-width:600px;margin:0 auto 2rem;opacity:.95}
+    .btn{display:inline-block;background:var(--gold);color:var(--black);padding:.8rem 1.8rem;border-radius:4px;text-decoration:none;font-weight:600}
+    section{padding:4rem 1.5rem}
+    .container{max-width:1000px;margin:0 auto}
+    .section-title{text-align:center;margin-bottom:2.5rem}
+    .section-title h2{font-size:1.8rem;margin-bottom:.5rem}
+    .divider{width:50px;height:3px;background:linear-gradient(90deg,var(--terracotta),var(--gold));margin:0 auto}
+    .timeline{position:relative;max-width:700px;margin:0 auto}
+    .timeline::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:3px;background:var(--terracotta)}
+    .t-item{position:relative;padding-left:50px;margin-bottom:2rem}
+    .t-item::before{content:'';position:absolute;left:12px;top:6px;width:16px;height:16px;background:var(--gold);border:3px solid var(--terracotta);border-radius:50%}
+    .t-card{background:white;padding:1.3rem;border-radius:8px;box-shadow:0 4px 15px rgba(0,0,0,.08);border-left:4px solid var(--terracotta)}
+    .t-year{color:var(--terracotta);font-weight:700;margin-bottom:.3rem}
+    .kings{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+    .king{background:white;border-radius:10px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.08)}
+    .king-img{height:160px;background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:2.5rem}
+    .king-body{padding:1.2rem}
+    .king-body h3{font-size:1.1rem;margin-bottom:.3rem}
+    .reign{color:var(--terracotta);font-size:.85rem;font-weight:600;margin-bottom:.5rem}
+    .relics{background:var(--black);color:#fdfbf7}
+    .relics h2,.relics p{color:#fdfbf7}
+    .relic-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+    .relic{background:#252525;border-radius:10px;padding:1.3rem;border:1px solid rgba(212,175,55,.2)}
+    .relic h3{color:var(--gold);margin-bottom:.5rem}
+    footer{background:var(--black);color:#aaa;text-align:center;padding:2rem;font-size:.9rem}
+
+    /* ===== Tambahan: foto & penjelasan rinci (struktur lama tidak diubah) ===== */
+    .t-card p+p,.king-body p+p,.relic p+p{margin-top:.7rem}
+    .king-img{height:240px;overflow:hidden}
+    .king-img img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+    .relic-img{width:100%;height:200px;object-fit:cover;border-radius:6px;margin-bottom:1rem;display:block;background:#1a1a1a}
+    .relic-ph{height:200px;border-radius:6px;margin-bottom:1rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1rem;background:#1a1a1a;border:1px dashed rgba(212,175,55,.4);color:var(--gold);font-size:.85rem}
+    .relic-ph b{font-family:'Cinzel',serif;font-size:1.6rem;margin-bottom:.3rem}
+    .credit{display:block;color:#888;font-size:.72rem;line-height:1.4;margin-bottom:.8rem}
+    .relics .credit{color:#9a9a9a;margin:-.4rem 0 .9rem}
+    .relic p{font-size:.95rem}
+    .king-body p{font-size:.95rem}
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Maja<span style="color:#fdfbf7">pahit</span></div>
+    <div class="nav">
+      <a href="#timeline">Sejarah</a>
+      <a href="#kings">Raja</a>
+      <a href="#relics">Peninggalan</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <div style="display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:.3rem 1rem;border-radius:50px;font-size:.8rem;margin-bottom:1.2rem;letter-spacing:1px">1293 – 1527 M</div>
+      <h1>Majapahit: Kejayaan dan Keruntuhan <span>Imperium Nusantara</span></h1>
+      <p>Menelusuri jejak sejarah berdirinya Kerajaan Majapahit, masa keemasan Hayam Wuruk & Gajah Mada, hingga masa kemundurannya.</p>
+      <a href="#timeline" class="btn">Jelajahi Sejarah →</a>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <div class="container">
+      <div class="section-title">
+        <h2>Dari Berdiri hingga Runtuh</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="timeline">
+        <div class="t-item">
+          <div class="t-card">
+            <div class="t-year">1293 M</div>
+            <h3>Masa Berdiri</h3>
+            <p>Raden Wijaya mendirikan Majapahit setelah mengalahkan Jayakatwang dan mengusir pasukan Mongol. Ibu kota dibangun di Hutan Tarik (Trowulan).</p>
+            <p>Latar belakangnya dimulai dari runtuhnya Singasari. Raja Kertanagara tewas dibunuh Jayakatwang dari Kediri, sementara Raden Wijaya, menantu Kertanagara, berhasil menyelamatkan diri. Pada 1293 Kaisar Kubilai Khan mengirim pasukan Mongol (Yuan) untuk menghukum Kertanagara yang menolak tunduk. Raden Wijaya cerdik memanfaatkan mereka: ia bersekutu untuk menumbangkan Jayakatwang, lalu berbalik menyerang pasukan Mongol hingga mereka terpaksa meninggalkan Jawa.</p>
+            <p>Raden Wijaya kemudian dinobatkan sebagai raja pada 10 November 1293 dengan gelar Kertarajasa Jayawardhana. Menurut tradisi dalam Pararaton, nama "Majapahit" berasal dari buah maja yang rasanya pahit, yang banyak tumbuh di Hutan Tarik, tempat ibu kota pertama dibuka.</p>
+          </div>
+        </div>
+        <div class="t-item">
+          <div class="t-card">
+            <div class="t-year">1328–1350 M</div>
+            <h3>Tribhuwana & Sumpah Palapa</h3>
+            <p>Ratu Tribhuwana Tunggadewi memerintah. Gajah Mada diangkat Mahapatih dan mengikrarkan Sumpah Palapa untuk menyatukan Nusantara.</p>
+            <p>Tribhuwana naik takhta pada 1328 setelah wafatnya Raja Jayanegara, putra Raden Wijaya yang masa pemerintahannya diwarnai pemberontakan. Di bawah ratu inilah Gajah Mada, yang namanya dikenal sejak ia berjasa memadamkan pemberontakan, diangkat menjadi Mahapatih (perdana menteri) pada 1336.</p>
+            <p>Saat pelantikannya, Gajah Mada mengucapkan Sumpah Palapa. Menurut Pararaton, ia bersumpah tidak akan menikmati palapa (kenikmatan duniawi) sebelum berhasil menundukkan wilayah-wilayah seperti Gurun, Seram, Tanjungpura, Haru, Pahang, Dompu, Bali, Sunda, Palembang, dan Tumasik. Sumpah inilah yang menjadi dasar politik ekspansi Majapahit.</p>
+          </div>
+        </div>
+        <div class="t-item">
+          <div class="t-card">
+            <div class="t-year">1350–1389 M</div>
+            <h3>Masa Keemasan</h3>
+            <p>Puncak kejayaan di bawah Hayam Wuruk dan Gajah Mada. Pengaruh Majapahit mencakup hampir seluruh Nusantara (Nagarakretagama 1365).</p>
+            <p>Hayam Wuruk naik takhta pada 1350 saat masih remaja, sekitar usia 16 tahun, dengan gelar Rajasanagara. Bersama Gajah Mada ia memperluas pengaruh Majapahit sebagai pusat jaringan negeri bawahan yang membentang dari Sumatra dan Semenanjung Malaya sampai Maluku dan Papua barat. Majapahit juga mengirim utusan ke Tiongkok pada kurun 1370–1381.</p>
+            <p>Gambaran kejayaan itu terekam dalam kitab Nagarakretagama (Desawarnana) karya Mpu Prapanca, selesai tahun 1365. Kitab ini memuji kemegahan keraton, perjalanan keliling raja, serta daftar daerah bawahan. Namun masa ini juga mencatat peristiwa kelam: Perang Bubat sekitar 1357, ketika rombongan Kerajaan Sunda yang datang untuk pernikahan Hayam Wuruk dengan Dyah Pitaloka berakhir dengan pertempuran dan tewasnya sang putri bersama rombongannya.</p>
+          </div>
+        </div>
+        <div class="t-item">
+          <div class="t-card">
+            <div class="t-year">1404–1527 M</div>
+            <h3>Kemunduran & Runtuh</h3>
+            <p>Perang Paregreg melemahkan kerajaan. Pengaruh Islam bangkit. Majapahit berakhir sekitar 1527 setelah serangan Kesultanan Demak.</p>
+            <p>Setelah Hayam Wuruk wafat pada 1389, perebutan takhta antara Wikramawardhana (menantu Hayam Wuruk, di keraton barat) dan Bhre Wirabhumi (putra Hayam Wuruk dari selir, di keraton timur) meletus menjadi Perang Paregreg pada 1404–1406. Wirabhumi kalah dan dipenggal, tetapi perang saudara ini menguras kas dan melemahkan kendali atas daerah bawahan. Singapura (Tumasik) bahkan dijarah pada 1398, dan wilayah di Sumatra serta Semenanjung Malaya perlahan lepas.</p>
+            <p>Pada saat yang sama, pelabuhan-pelabuhan di pesisir utara Jawa tumbuh sebagai pusat perdagangan Islam, dan Malaka bangkit sebagai pesaing kuat. Konflik dengan Demak berlangsung dari 1478 hingga 1527. Para sejarawan berbeda pendapat soal tahun akhirnya: sengkalan "Sirna ilang kertaning bhumi" dibaca sebagai 1478, sedangkan 1527 adalah tahun yang paling sering disebut sebagai jatuhnya sisa-sisa kerajaan. Banyak bangsawan, pendeta, dan seniman kemudian mengungsi ke Bali, sehingga warisan budaya Majapahit terus hidup di sana.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kings">
+    <div class="container">
+      <div class="section-title">
+        <h2>Raja-Raja Majapahit</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="kings">
+        <div class="king">
+          <div class="king-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Harihara_Majapahit_1.JPG?width=800" alt="Arca Harihara gaya Majapahit yang diyakini sebagai perwujudan Raden Wijaya" loading="lazy" onerror="this.parentNode.textContent='♛'"></div>
+          <div class="king-body">
+            <h3>Raden Wijaya</h3>
+            <div class="reign">1293–1309 M</div>
+            <small class="credit">Arca Harihara (Majapahit), diyakini perwujudan Raden Wijaya setelah wafat. Bukan potret semasa hidup. Foto: Wikimedia Commons.</small>
+            <p>Pendiri Majapahit. Berhasil mengalahkan Jayakatwang dan mengusir Mongol.</p>
+            <p>Bergelar Kertarajasa Jayawardhana, ia menantu Raja Kertanagara dari Singasari. Dalam pelariannya dari kejaran pasukan Jayakatwang, ia ditolong penduduk Desa Kudadu, dan sebagai balas jasa desa itu kemudian dijadikan daerah bebas pajak (sima) lewat Prasasti Kudadu. Ia juga mendapat dukungan Arya Wiraja dari Madura.</p>
+            <p>Masa pemerintahannya tidak mudah karena beberapa tokoh pendukung awalnya memberontak. Setelah wafat pada 1309, ia digantikan putranya, Jayanegara, dan didharmakan sebagai Harihara, perwujudan Wisnu dan Siwa, di Candi Simping.</p>
+          </div>
+        </div>
+        <div class="king">
+          <div class="king-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Parvati_Majapahit_1.JPG?width=800" alt="Arca Parwati gaya Majapahit yang diyakini sebagai perwujudan Ratu Tribhuwana" loading="lazy" onerror="this.parentNode.textContent='♛'"></div>
+          <div class="king-body">
+            <h3>Tribhuwana Tunggadewi</h3>
+            <div class="reign">1328–1350 M</div>
+            <small class="credit">Arca Parwati (Majapahit), diyakini perwujudan Ratu Tribhuwana. Bukan potret semasa hidup. Foto: Wikimedia Commons.</small>
+            <p>Ratu yang mengangkat Gajah Mada. Sumpah Palapa diikrarkan pada masanya.</p>
+            <p>Bernama asli Dyah Gitarja, ia putri Raden Wijaya dan Gayatri (Rajapatni), serta menikah dengan Kertawardhana, Pangeran Tumapel. Ia naik takhta setelah Jayanegara wafat, ketika kerajaan masih goyah akibat pemberontakan.</p>
+            <p>Dengan menunjuk Gajah Mada sebagai Mahapatih, Tribhuwana meletakkan dasar kekuatan Majapahit: pemberontakan dipadamkan, wilayah seperti Bali ditundukkan, dan jaringan negeri bawahan diperluas. Ia kemudian menyerahkan takhta kepada putranya, Hayam Wuruk, yang membawa Majapahit ke puncak kejayaan.</p>
+          </div>
+        </div>
+        <div class="king">
+          <div class="king-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/028_Memorial_House,_Petilasan_Hayam_Wuruk_(39552422705).jpg?width=800" alt="Petilasan Hayam Wuruk di Trowulan" loading="lazy" onerror="this.parentNode.textContent='♛'"></div>
+          <div class="king-body">
+            <h3>Hayam Wuruk</h3>
+            <div class="reign">1350–1389 M</div>
+            <small class="credit">Petilasan Hayam Wuruk di Trowulan. Potret asli sang raja tidak diketahui. Foto: Wikimedia Commons.</small>
+            <p>Raja terbesar. Bersama Gajah Mada membawa Majapahit ke puncak kejayaan.</p>
+            <p>Lahir tahun 1334, putra Tribhuwana dan Kertawardhana. Nagarakretagama mengaitkan kelahirannya dengan letusan Gunung Kelud. Ia memerintah dengan gelar Sri Rajasanagara dan menikahi Paduka Sori, yang melahirkan Kusumawardhani, istri Wikramawardhana.</p>
+            <p>Masa pemerintahannya menjadi puncak kekuasaan Majapahit: Mpu Prapanca menulis Nagarakretagama (1365) untuk memuji sang raja, seni pertunjukan seperti wayang kulit berkembang, dan hubungan diplomatik dijalin hingga ke Tiongkok. Ia wafat pada 1389 dan perebutan takhta setelahnya memicu Perang Paregreg.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="relics" id="relics">
+    <div class="container">
+      <div class="section-title">
+        <h2>Peninggalan Sejarah</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="relic-grid">
+        <div class="relic">
+          <img class="relic-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bajang_Ratu_Gate_Trowulan.jpg?width=800" alt="Gapura Bajang Ratu di Trowulan" loading="lazy" onerror="this.style.display='none'">
+          <h3>Gapura Bajang Ratu</h3>
+          <small class="credit">Foto: Wikimedia Commons.</small>
+          <p>Gapura paduraksa terbesar di Trowulan. Terkait penghormatan Raja Jayanegara (1328).</p>
+          <p>Gapura bata merah setinggi sekitar 16 meter ini berdiri di Desa Temon, Trowulan, Mojokerto. Gaya paduraksa berarti gapura beratap dan berbilik, berbeda dengan candi bentar yang terbelah. Dugaan umum menyebut gapura ini adalah pintu masuk bangunan suci untuk memperingati Jayanegara, yang wafat pada 1328.</p>
+          <p>Nama "bajang ratu" sering dikaitkan dengan Jayanegara yang naik takhta saat masih muda. Pada bagian tubuhnya terdapat relief, antara lain kisah Ramayana dan Sri Tanjung. Gapura ini juga menunjukkan keterampilan para pengrajin bata Majapahit.</p>
+        </div>
+        <div class="relic">
+          <img class="relic-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Candi_Tikus.jpg?width=800" alt="Candi Tikus, petirtaan kuno di Trowulan" loading="lazy" onerror="this.style.display='none'">
+          <h3>Candi Tikus</h3>
+          <small class="credit">Foto: Wikimedia Commons.</small>
+          <p>Situs petirtaan (pemandian) kerajaan di Bejijong, Trowulan.</p>
+          <p>Candi Tikus ditemukan kembali pada 1914. Menurut cerita, nama "tikus" muncul karena daerah itu dulu dipenuhi tikus. Bangunannya berupa kolam persegi yang letaknya lebih rendah dari permukaan tanah, dengan menara pusat berbentuk meru di tengahnya, dikelilingi menara-menara kecil.</p>
+          <p>Air mengalir dari deretan pancuran berbentuk teratai di sekeliling menara. Rancangan ini melambangkan Gunung Mahameru, tempat tinggal para dewa, dengan air sebagai amerta atau air kehidupan. Para ahli menduga tempat ini dipakai untuk ritual penyucian oleh keluarga raja atau bangsawan, sekaligus menunjukkan kepandaian Majapahit dalam mengelola air.</p>
+        </div>
+        <div class="relic">
+          <img class="relic-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Wringin_Lawang,_Trowulan.jpg?width=800" alt="Gapura Wringin Lawang di Trowulan" loading="lazy" onerror="this.style.display='none'">
+          <h3>Gapura Wringin Lawang</h3>
+          <small class="credit">Foto: Wikimedia Commons.</small>
+          <p>Candi bentar yang diduga pintu gerbang kompleks ibu kota Majapahit.</p>
+          <p>Gapura bata merah setinggi sekitar 15,5 meter ini berdiri di Trowulan dan merupakan contoh candi bentar, yaitu gapura yang terbelah dua dengan celah di tengah sebagai jalan masuk. Bentuknya polos dan megah, dan diyakini menjadi pintu masuk sebuah kompleks penting.</p>
+          <p>Namanya berarti "pintu beringin", merujuk pada pohon beringin yang dulu tumbuh di dekatnya. Gaya candi bentar seperti ini kemudian banyak ditiru pada gerbang pura di Bali, yang menunjukkan pengaruh arsitektur Majapahit yang bertahan hingga kini.</p>
+        </div>
+        <div class="relic">
+          <!-- GANTI: tambahkan foto Prasasti Kudadu di sini bila sudah ada fotonya, contoh:
+               <img class="relic-img" src="foto/prasasti-kudadu.jpg" alt="Prasasti Kudadu" loading="lazy"> -->
+          <div class="relic-ph"><b>1294 M</b>Prasasti lempeng logam berbahasa Sanskerta dan Jawa Kuno<br>(foto belum tersedia)</div>
+          <h3>Prasasti Kudadu</h3>
+          <p>Prasasti 1294 M yang menceritakan perlindungan Raden Wijaya oleh penduduk Kudadu.</p>
+          <p>Prasasti ini bertarikh 1216 Saka atau 1294 M, juga dikenal sebagai Prasasti Gunung Buthak karena ditemukan di Gunung Butak, Trawas, Mojokerto. Isinya berupa anugerah Raja Kertarajasa kepada pejabat Desa Kudadu: desa itu dijadikan sima atau daerah bebas pajak.</p>
+          <p>Alasannya, penduduk Kudadu menolong Raden Wijaya saat ia dikejar pasukan Jayakatwang. Teks bercampur bahasa Sanskerta dan Jawa Kuno ini menjadi sumber tertulis penting tentang masa pelarian pendiri Majapahit, sehingga sering dipakai untuk menguji kisah dalam Pararaton.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Portofolio Sejarah Majapahit. Hak cipta dilindungi.</p>
+    <p style="margin-top:.4rem;font-size:.8rem">Dibuat untuk melestarikan warisan Nusantara</p>
+    <p style="margin-top:.4rem;font-size:.8rem">Hak cipta website: Azka Ahmad Alfaiq &amp; Rafa Mahardika (Kelompok 11). Pengarah: Claude AI.</p>
+    <p style="margin-top:.4rem;font-size:.75rem">Teks dan desain halaman ini dilindungi hak cipta. Dilarang menyalin atau memperbanyak tanpa izin pembuat.</p>
+    <p style="margin-top:.4rem;font-size:.75rem">Foto: Wikimedia Commons. Hak cipta foto tetap milik masing-masing pembuatnya dan dipakai sesuai lisensi di halaman filenya. Sumber teks: Nagarakretagama, Pararaton, dan kajian sejarah Majapahit.</p>
+  </footer>
+</body>
+                                  </html>
+                                  
